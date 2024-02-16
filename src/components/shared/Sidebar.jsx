@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import classNames from "classnames";
-// import { FcBullish } from "react-icons/fc";
 import { HiOutlineLogout } from "react-icons/hi";
 import {
   DASHBOARD_SIDEBAR_LINKS,
@@ -14,10 +13,10 @@ const linkClass =
 
 export default function Sidebar() {
   return (
-    <div className="bg-neutral-900 w-60 p-3 flex flex-col">
+    <div className="bg-[#BFD8AF] w-60 p-3 flex flex-col">
       <div className="flex items-center gap-2 px-1 py-3">
         {/* <FcBullish fontSize={24} /> */}
-        <img src={Logo} alt="Logo" className="h-[150px] w-[150px]" />
+        <img src={Logo} alt="Logo" className="h-[80px] w-[200px]" />
       </div>
       <div className="py-8 flex flex-1 flex-col gap-0.5">
         {DASHBOARD_SIDEBAR_LINKS.map((link) => (
@@ -26,7 +25,7 @@ export default function Sidebar() {
       </div>
 
       {/* label/ navigation names/ options */}
-      <div className="flex flex-col gap-0.5 pt-2 border-t border-neutral-700">
+      {/* <div className="flex flex-col gap-0.5 pt-2 border-t border-neutral-700">
         {DASHBOARD_SIDEBAR_BOTTOM_LINKS.map((link) => (
           <SidebarLink key={link.key} link={link} />
         ))}
@@ -36,7 +35,7 @@ export default function Sidebar() {
           </span>
           Logout
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
@@ -49,9 +48,7 @@ function SidebarLink({ link }) {
     <Link
       to={link.path}
       className={classNames(
-        pathname === link.path
-          ? "bg-neutral-700 text-white"
-          : "text-neutral-400",
+        pathname === link.path ? "bg-[#789E59] text-black" : "text-black",
         linkClass
       )}
     >
